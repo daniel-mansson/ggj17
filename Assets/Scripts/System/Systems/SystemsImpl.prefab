@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 450200}
-  - component: {fileID: 11418724}
+  - component: {fileID: 114222205046347536}
   m_Layer: 0
   m_Name: SystemsImpl
   m_TagString: Untagged
@@ -29,18 +29,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &11418724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 118780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ea2ee816052e8438a9c731d95d91e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_transitionPrefab: {fileID: 126870, guid: 9c4f2a879a9b1ad43a7b6fe20d62ea21, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -52,3 +40,17 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 118780}
   m_IsPrefabParent: 1
+--- !u!114 &114222205046347536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdb80fb8f04dc44a97cfd3942edba8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_defaultControllerDefinitionData: {fileID: 4900000, guid: 85dad22071fff604982c4ffb1a8d1bcd,
+    type: 3}
+  m_controllerDefinitionData: []
