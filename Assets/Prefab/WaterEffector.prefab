@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4570599333164244}
   - component: {fileID: 61432733462451384}
   - component: {fileID: 253470671313038090}
+  - component: {fileID: 114009073297581466}
   m_Layer: 0
   m_Name: WaterEffector
   m_TagString: Untagged
@@ -55,6 +56,18 @@ BoxCollider2D:
   m_Offset: {x: 1.0351944, y: -4.5383644}
   serializedVersion: 2
   m_Size: {x: 86.83681, y: 49.733932}
+--- !u!114 &114009073297581466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1623948024804612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc183dae00cb1453bb573cb087f4e1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fasterPerEat: 1.1
 --- !u!253 &253470671313038090
 BuoyancyEffector2D:
   m_ObjectHideFlags: 1

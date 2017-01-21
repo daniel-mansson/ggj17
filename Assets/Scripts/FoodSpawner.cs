@@ -7,7 +7,7 @@ public class FoodSpawner : MonoBehaviour {
 	[System.Serializable]
 	struct FoodSpawn {
 		public MultiChunk Template;
-		public float BaseChance, ChanceMultiplierForEachEat;
+		public float BaseChance;
 		public int CountOffset;
 	}
 	
@@ -26,8 +26,7 @@ public class FoodSpawner : MonoBehaviour {
 			yield return new WaitForSeconds(m_baseSpawnRate * Mathf.Pow(m_spawnRateMultiplerForEachEat, EatCounter.NFoodsDestroyed()));
 			foreach(var spawn in m_foods) {
 				if(spawn.CountOffset <= EatCounter.NFoodsDestroyed()) {
-					float spawnChance = spawn.BaseChance * Mathf.Pow(spawn.ChanceMultiplierForEachEat, EatCounter.NFoodsDestroyed());
-					if(Random.value > spawnChance) {
+					if(Random.value > spawn.BaseChance) {
 						MultiChunk food = Instantiate(spawn.Template);
 						food.transform.position = transform.position + Vector3.right * Random.Range(-0.5f, 0.5f) * m_width;
 						food.transform.Rotate(0, 0, 360f * Random.value);
