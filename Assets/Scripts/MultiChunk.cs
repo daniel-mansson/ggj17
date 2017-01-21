@@ -31,7 +31,7 @@ public class MultiChunk : MonoBehaviour {
 
 	// returns Vector of where the joint anchor should connect after eating & Vector2.zero when done eating
 	public Vector2 Eat(Transform ass) {
-		if(m_eaten < m_foodParts.Length - 1) {
+		if(m_eaten < m_foodParts.Length) {
 			int index = m_eatingBackwards ? m_foodParts.Length - m_eaten - 1 : m_eaten;
 			m_foodParts[index].SetActive(false);
 			m_eaten++;

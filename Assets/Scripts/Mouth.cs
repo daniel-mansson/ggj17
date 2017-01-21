@@ -26,7 +26,8 @@ public class Mouth : MonoBehaviour {
 
 	void Eat() {
 		Vector2 anchorPos = m_foodInMouth.Eat(m_ass);
-		m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
+		if(m_foodInMouth.CurrentEatThing)
+			m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
 		if(anchorPos == Vector2.zero) {
 			Destroy(m_foodInMouth.gameObject);
 			m_foodInMouth = null;
