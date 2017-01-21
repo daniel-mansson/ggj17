@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,14 +24,31 @@ public class WhaleFish : MonoBehaviour
 	void Awake()
 	{
 		m_deathParticles.SetActive(false);
+		ReplaceSprites();
 	}
 
 	void Start ()
 	{
+		ReplaceSprites();
 		m_controller = Systems.Instance.Input.GetController(m_playerId);
 		m_body = GetComponent<Rigidbody2D>();
 	}
-	
+
+	void ReplaceSprites()
+	{
+		var fishSprites = Resources.LoadAll<Sprite>("fish" + m_playerId);
+
+		var allSprites = GetComponentsInChildren<SpriteRenderer>();
+		foreach (var sr in allSprites)
+		{
+			var match = fishSprites.FirstOrDefault(f => f.name == sr.sprite.name);
+			if (match != null)
+			{
+				sr.sprite = match;
+			}
+		}
+	}
+
 	void FixedUpdate ()
 	{
 		if(!m_dead) {
