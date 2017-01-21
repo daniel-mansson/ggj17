@@ -16,7 +16,6 @@ public class FoodSpawner : MonoBehaviour {
 	[SerializeField] Vector2 m_box = 10 * (Vector2.one - Vector2.one / 2);
 
 	void Start() {
-		Gizmos.DrawWireCube(transform.position - Vector3.up * m_height, m_box);
 		foreach(var spawn in m_foods) {
 			spawn.Template.gameObject.SetActive(false);
 		}
