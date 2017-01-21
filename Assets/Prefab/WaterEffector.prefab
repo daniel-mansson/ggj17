@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc183dae00cb1453bb573cb087f4e1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fasterPerEat: 1.1
+  m_fasterPerEat: 1.2
 --- !u!253 &253470671313038090
 BuoyancyEffector2D:
   m_ObjectHideFlags: 1
@@ -78,11 +78,11 @@ BuoyancyEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16
   m_SurfaceLevel: 11.53
-  m_Density: 2
+  m_Density: 1.8
   m_LinearDrag: 6
   m_AngularDrag: 0
   m_FlowAngle: 0
-  m_FlowMagnitude: -10
+  m_FlowMagnitude: -25
   m_FlowVariation: 5

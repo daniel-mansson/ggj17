@@ -14,6 +14,9 @@ public class Mouth : MonoBehaviour {
 
 	public void Eat() {
 		if(m_haveThingInMouth && m_foodInMouth) {
+			var anim = transform.root.GetComponent<CodeAnimation>();
+			anim.Chew();
+			anim.Poop();
 			bool done = m_foodInMouth.Eat(m_ass);
 			if(m_foodInMouth.CurrentEatThing)
 				m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
