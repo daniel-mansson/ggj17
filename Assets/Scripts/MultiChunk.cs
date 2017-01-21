@@ -38,6 +38,7 @@ public class MultiChunk : MonoBehaviour {
 		m_nextToBeEaten = m_eatingBackwards ? m_foodParts.Length - m_eaten - 1 : m_eaten;
 		Rigidbody2D poop = Instantiate(m_poopTemplate);
 		poop.transform.position = ass.position;
+		poop.transform.rotation = ass.rotation;
 		poop.gameObject.SetActive(true);
 		// TODO inherit velocity from ass
 		poop.AddForce(-ass.right * m_poopForce, ForceMode2D.Impulse);
