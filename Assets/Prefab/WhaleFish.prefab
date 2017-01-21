@@ -634,6 +634,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ass: {fileID: 4028392426761516}
   m_deathTime: 1
+  m_hitstopTimePerEat: 0.05
+  m_hitstopThresholdEats: 10
 --- !u!198 &198728282177857340
 ParticleSystem:
   m_ObjectHideFlags: 1
