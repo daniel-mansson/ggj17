@@ -13,7 +13,7 @@ public class Mouth : MonoBehaviour {
 	bool m_haveThingInMouth = false;
 
 	public void Eat() {
-		if(m_haveThingInMouth) {
+		if(m_haveThingInMouth && m_foodInMouth) {
 			bool done = m_foodInMouth.Eat(m_ass);
 			if(m_foodInMouth.CurrentEatThing)
 				m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
