@@ -12,38 +12,31 @@ public class Mouth : MonoBehaviour {
 	Shit m_shitInMouth;
 	bool m_haveThingInMouth = false;
 
-	void Start() {
-		StartCoroutine(AutoEat());
-	}
-
-	IEnumerator AutoEat() {
-		while(true) {
-			yield return new WaitForSeconds(1);
-			if(m_foodInMouth)
-				Eat();
-		}
-	}
-
-	void Eat() {
-		Vector2 anchorPos = m_foodInMouth.Eat(m_ass);
-		if(m_foodInMouth.CurrentEatThing)
-			m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
-		if(anchorPos == Vector2.zero) {
-			Destroy(m_foodInMouth.gameObject);
-			m_foodInMouth = null;
-			m_haveThingInMouth = false;
-			EatCounter.FoodEatenCompletely();
+	public void Eat() {
+		if(m_haveThingInMouth) {
+			bool done = m_foodInMouth.Eat(m_ass);
+			if(m_foodInMouth.CurrentEatThing)
+				m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
+			if(done) {
+				EatCounter.FoodEatenCompletely();
+				Drop();
+			}
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		Debug.Log(other.name + " " + m_haveThingInMouth + " " + m_foodInMouth);
 		if(!m_haveThingInMouth) {
 			FoodHead foodHead = other.GetComponent<FoodHead>();
 			if(foodHead) {
-				var body = foodHead.Parent.Grabbed(foodHead.Backwards);
+				var body = foodHead.Parent.Grabbed(foodHead.Backwards, this);
 				if(body) {
 					m_foodInMouth = foodHead.Parent;
 					Destroy(foodHead.Parent.GetComponent<Rigidbody2D>());
+					foreach (var c in foodHead.Parent.GetComponentsInChildren<Collider2D>())
+					{
+						c.enabled = false;
+					}
 					m_foodInMouth.transform.SetParent(transform);
 					m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
 				}
@@ -68,6 +61,12 @@ public class Mouth : MonoBehaviour {
 		m_shitInMouth = null;
 		m_haveThingInMouth = false;
 		fish.SetDead();
+	}
+
+	public void Drop() {
+		Destroy(m_foodInMouth.gameObject);
+		m_foodInMouth = null;
+		m_haveThingInMouth = false;
 	}
 
 }

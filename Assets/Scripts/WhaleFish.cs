@@ -43,6 +43,12 @@ public class WhaleFish : MonoBehaviour
 		m_body.AddTorque((m_targetRot - m_body.rotation) * m_rotTorque);
 	}
 
+	void Update() {
+		if(m_controller.GetButtonDown(Xbox360ControllerButtonId.A)) {
+			m_mouth.Eat();
+		}
+	}
+
 	public void SetDead() {
 		if (!m_dead)
 		{
