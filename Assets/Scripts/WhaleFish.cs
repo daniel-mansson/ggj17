@@ -10,6 +10,7 @@ public class WhaleFish : MonoBehaviour
 	public float m_rotTorque = 1f;
 	public float m_deadFloatForce = 3f;
 	public Mouth m_mouth;
+	public GameObject m_deathParticles;
 
 	Rigidbody2D m_body;
 	Controller m_controller;
@@ -18,6 +19,7 @@ public class WhaleFish : MonoBehaviour
 
 	void Start ()
 	{
+		m_deathParticles.SetActive(false);
 		m_controller = Systems.Instance.Input.GetController(m_playerId);
 		m_body = GetComponent<Rigidbody2D>();
 	}
@@ -36,6 +38,7 @@ public class WhaleFish : MonoBehaviour
 
 	public void SetDead() {
 		m_dead = true;
+		m_deathParticles.SetActive(true);
 		m_mouth.enabled = false;
 		m_targetRot = 180;
 	}
