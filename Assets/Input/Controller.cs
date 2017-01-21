@@ -97,6 +97,10 @@ public class ControllerImpl : Controller
 
 			if (Input.GetKeyDown(KeyCode.LeftShift))
 				m_buttonStates[Xbox360ControllerButtonId.A] = true;
+			if (Input.GetKeyDown(KeyCode.E))
+				m_buttonStates[Xbox360ControllerButtonId.Start] = true;
+			if (Input.GetKeyDown(KeyCode.Q))
+				m_buttonStates[Xbox360ControllerButtonId.B] = true;
 		}
 		else if(m_internalId == 4)
 		{
@@ -118,6 +122,10 @@ public class ControllerImpl : Controller
 
 			if (Input.GetKeyDown(KeyCode.RightShift))
 				m_buttonStates[Xbox360ControllerButtonId.A] = true;
+			if (Input.GetKeyDown(KeyCode.Return))
+				m_buttonStates[Xbox360ControllerButtonId.Start] = true;
+			if (Input.GetKeyDown(KeyCode.Backspace))
+				m_buttonStates[Xbox360ControllerButtonId.B] = true;
 		}
 	}
 
