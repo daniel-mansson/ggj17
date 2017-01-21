@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Mouth : MonoBehaviour {
 
-	FixedJoint2D m_joint;
+	[SerializeField] HingeJoint2D m_joint;
 	MultiChunk m_inMouth;
 
 	void Start() {
-		m_joint = GetComponent<FixedJoint2D>();
 		StartCoroutine(AutoEat());
+		m_joint.enabled = false;
 	}
 
 	IEnumerator AutoEat() {
@@ -26,6 +26,8 @@ public class Mouth : MonoBehaviour {
 		if(anchorPos == Vector2.zero) {
 			Destroy(m_inMouth.gameObject);
 			m_inMouth = null;
+			m_joint.connectedBody = null;
+			m_joint.enabled = false;
 			EatCounter.FoodEatenCompletely();
 		}
 	}
@@ -38,7 +40,9 @@ public class Mouth : MonoBehaviour {
 				if(body) {
 					m_inMouth = foodHead.Parent;
 					m_joint.connectedBody = body;
+					//m_joint.anchor = foodHead.transform.position;
 					m_joint.connectedAnchor = foodHead.transform.position;
+					m_joint.enabled = true;
 				}
 			}
 		}
