@@ -37,6 +37,9 @@ public class WhaleFish : MonoBehaviour
 			var joy = m_controller.GetJoystick(Xbox360ControllerJoystickId.Left);
 			m_body.AddForce(m_force * joy);
 			m_targetRot = m_body.velocity.y * m_rotScale;
+			if(m_controller.GetButtonDown(Xbox360ControllerButtonId.A)) {
+				m_mouth.Eat();
+			}
 		} else {
 			m_body.AddForce(Vector2.up * m_deadFloatForce);
 		}

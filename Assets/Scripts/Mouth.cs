@@ -12,19 +12,7 @@ public class Mouth : MonoBehaviour {
 	Shit m_shitInMouth;
 	bool m_haveThingInMouth = false;
 
-	void Start() {
-		StartCoroutine(AutoEat());
-	}
-
-	IEnumerator AutoEat() {
-		while(true) {
-			yield return new WaitForSeconds(1);
-			if(m_foodInMouth)
-				Eat();
-		}
-	}
-
-	void Eat() {
+	public void Eat() {
 		Vector2 anchorPos = m_foodInMouth.Eat(m_ass);
 		if(m_foodInMouth.CurrentEatThing)
 			m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
