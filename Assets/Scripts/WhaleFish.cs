@@ -25,13 +25,13 @@ public class WhaleFish : MonoBehaviour
 	{
 		m_deathParticles.SetActive(false);
 		ReplaceSprites();
+		m_body = GetComponent<Rigidbody2D>();
 	}
 
 	void Start ()
 	{
 		ReplaceSprites();
 		m_controller = Systems.Instance.Input.GetController(m_playerId);
-		m_body = GetComponent<Rigidbody2D>();
 	}
 
 	void ReplaceSprites()
