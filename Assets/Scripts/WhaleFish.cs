@@ -22,30 +22,11 @@ public class WhaleFish : MonoBehaviour
 	void FixedUpdate ()
 	{
 		var joy = m_controller.GetJoystick(Xbox360ControllerJoystickId.Left);
-		if(m_playerId == 0) {
-			if(Input.GetKey(KeyCode.LeftArrow))
-				joy += Vector2.left;
-			if(Input.GetKey(KeyCode.RightArrow))
-				joy += Vector2.right;
-			if(Input.GetKey(KeyCode.UpArrow))
-				joy += Vector2.up;
-			if(Input.GetKey(KeyCode.DownArrow))
-				joy += Vector2.down;
-		}
-		if(m_playerId == 1) {
-			if(Input.GetKey(KeyCode.A))
-				joy += Vector2.left;
-			if(Input.GetKey(KeyCode.D))
-				joy += Vector2.right;
-			if(Input.GetKey(KeyCode.W))
-				joy += Vector2.up;
-			if(Input.GetKey(KeyCode.S))
-				joy += Vector2.down;
-		}
 		m_body.AddForce(m_force * joy);
 
 		m_targetRot = m_body.velocity.y * m_rotScale;
 
 		m_body.AddTorque((m_targetRot - m_body.rotation) * m_rotTorque);
 	}
+	
 }
