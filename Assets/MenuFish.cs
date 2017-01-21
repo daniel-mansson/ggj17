@@ -12,6 +12,8 @@ public class MenuFish : MonoBehaviour
 
 	public Color m_dimColor = Color.black;
 
+	public bool IsReadyToPlay { get { return m_playerInfo.IsJoined(m_fish.m_playerId); } }
+
 	// Use this for initialization
 	void Start () {
 		m_fish = GetComponent<WhaleFish>();
