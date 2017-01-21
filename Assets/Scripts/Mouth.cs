@@ -6,6 +6,7 @@ using UnityEngine;
 public class Mouth : MonoBehaviour {
 
 	[SerializeField] HingeJoint2D m_joint;
+	[SerializeField] Transform m_ass;
 	MultiChunk m_inMouth;
 
 	void Start() {
@@ -22,7 +23,7 @@ public class Mouth : MonoBehaviour {
 	}
 
 	void Eat() {
-		var anchorPos = m_inMouth.Eat();
+		var anchorPos = m_inMouth.Eat(m_ass);
 		if(anchorPos == Vector2.zero) {
 			Destroy(m_inMouth.gameObject);
 			m_inMouth = null;
@@ -40,7 +41,6 @@ public class Mouth : MonoBehaviour {
 				if(body) {
 					m_inMouth = foodHead.Parent;
 					m_joint.connectedBody = body;
-					//m_joint.anchor = foodHead.transform.position;
 					m_joint.connectedAnchor = foodHead.transform.position;
 					m_joint.enabled = true;
 				}

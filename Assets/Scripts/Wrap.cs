@@ -8,10 +8,7 @@ public class Wrap : MonoBehaviour {
 	[SerializeField] Transform m_sendTo;
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Transform root = other.transform;
-		while(root.parent != null) {
-			root = root.parent;
-		}
+		var root = other.attachedRigidbody.transform;
 		var a = root.position;
 		a.x = m_sendTo.position.x;
 		root.position = a;
