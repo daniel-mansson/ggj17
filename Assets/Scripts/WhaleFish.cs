@@ -17,9 +17,16 @@ public class WhaleFish : MonoBehaviour
 	float m_targetRot = 0f;
 	bool m_dead = false;
 
-	void Start ()
+	public bool IsDead { get { return m_dead; } }
+	public event System.Action<WhaleFish> OnDeath;
+
+	void Awake()
 	{
 		m_deathParticles.SetActive(false);
+	}
+
+	void Start ()
+	{
 		m_controller = Systems.Instance.Input.GetController(m_playerId);
 		m_body = GetComponent<Rigidbody2D>();
 	}
@@ -37,10 +44,18 @@ public class WhaleFish : MonoBehaviour
 	}
 
 	public void SetDead() {
-		m_dead = true;
-		m_deathParticles.SetActive(true);
-		m_mouth.enabled = false;
-		m_targetRot = 180;
+		if (!m_dead)
+		{
+			m_dead = true;
+			m_deathParticles.SetActive(true);
+			m_mouth.enabled = false;
+			m_targetRot = 180;
+
+			if (OnDeath != null)
+			{
+				OnDeath(this);
+			}
+		}
 	}
 	
 

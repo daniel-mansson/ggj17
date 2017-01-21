@@ -5,6 +5,7 @@ using UnityEngine;
 public class MenuButtons : MonoBehaviour
 {
 	public List<GameObject> m_buttons;
+	public GameObject m_startText;
 
 	// Use this for initialization
 	void Start ()
@@ -12,7 +13,7 @@ public class MenuButtons : MonoBehaviour
 		int id = 0;
 		foreach (var go in m_buttons)
 		{
-			go.SetActive(!Systems.Instance.Players.IsJoined(id));
+			SetState(id, !Systems.Instance.Players.IsJoined(id));
 			++id;
 		}
 	}
@@ -25,5 +26,6 @@ public class MenuButtons : MonoBehaviour
 	public void SetState(int id, bool state)
 	{
 		m_buttons[id].SetActive(state);
+		m_startText.SetActive(Systems.Instance.Players.Count > 1);
 	}
 }

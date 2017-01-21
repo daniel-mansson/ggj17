@@ -17,6 +17,9 @@ public class StateHandler : MonoBehaviour
 	public void Start()
 	{
 		m_transition = Systems.Instance.Transition;
+#pragma warning disable CS0618 // Type or member is obsolete
+		m_state = Application.loadedLevelName == "TheMenu" ? State.Menu : State.Game;
+#pragma warning restore CS0618 // Type or member is obsolete
 	}
 
 	public Dictionary<State, string> m_stateToScene = new Dictionary<State, string>()

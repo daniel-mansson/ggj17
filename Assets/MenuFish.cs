@@ -10,6 +10,8 @@ public class MenuFish : MonoBehaviour
 	PlayerInfo m_playerInfo;
 	Controller m_controller;
 
+	public Color m_dimColor = Color.black;
+
 	// Use this for initialization
 	void Start () {
 		m_fish = GetComponent<WhaleFish>();
@@ -32,7 +34,7 @@ public class MenuFish : MonoBehaviour
 		var allSprites = m_fish.GetComponentsInChildren<SpriteRenderer>();
 		foreach (var s in allSprites)
 		{
-			s.material.SetColor("_Color", useShadow ? Color.black : Color.white);
+			s.material.SetColor("_Color", useShadow ? m_dimColor : Color.white);
 		}
 	}
 	
