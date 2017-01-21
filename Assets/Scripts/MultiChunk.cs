@@ -11,9 +11,14 @@ public class MultiChunk : MonoBehaviour {
 	bool m_eatingBackwards = false;
 	bool m_isGrabbed = false;
 	Rigidbody2D m_body;
+	float m_targetHeight;
 
 	void Start() {
 		m_body = GetComponent<Rigidbody2D>();
+	}
+
+	public void Initialize(float height) {
+		m_targetHeight = height;
 	}
 
 	// returns true when done eating
@@ -35,6 +40,17 @@ public class MultiChunk : MonoBehaviour {
 			return m_body;
 		}
 		return null;
+	}
+
+	void Update() {
+
+	}
+
+	void OnDrawGizmos() {
+		Gizmos.color = Color.red;
+		var targetpos = transform.position;
+		targetpos.y = m_targetHeight;
+		Gizmos.DrawSphere(targetpos, 0.1f);
 	}
 
 }

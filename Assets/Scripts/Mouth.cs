@@ -26,6 +26,7 @@ public class Mouth : MonoBehaviour {
 		if(anchorPos == Vector2.zero) {
 			Destroy(m_inMouth.gameObject);
 			m_inMouth = null;
+			EatCounter.FoodEatenCompletely();
 		}
 	}
 
