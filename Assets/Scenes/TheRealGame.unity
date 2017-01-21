@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 420877730}
   - component: {fileID: 420877729}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822636e2f21ee964586ceaf62e39c7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 1
+  m_speed: 0.3
   m_material: {fileID: 2100000, guid: 010c31bf3b030d34cb765f0575e76283, type: 2}
 --- !u!23 &420877730
 MeshRenderer:
@@ -248,7 +248,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -420,6 +420,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1686593452
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114555810015516836, guid: 2898f919d9377fa4790778bd7e3fecde,
+        type: 2}
+      propertyPath: m_sideFriction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114555810015516836, guid: 2898f919d9377fa4790778bd7e3fecde,
+        type: 2}
+      propertyPath: m_rotScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922148557691820, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+      propertyPath: m_Name
+      value: WhaleFish (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114555810015516836, guid: 2898f919d9377fa4790778bd7e3fecde,
+        type: 2}
+      propertyPath: m_playerId
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1982878536
 Prefab:
   m_ObjectHideFlags: 0
@@ -458,16 +519,6 @@ Prefab:
     - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114555810015516836, guid: 2898f919d9377fa4790778bd7e3fecde,
-        type: 2}
-      propertyPath: m_sideFriction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114555810015516836, guid: 2898f919d9377fa4790778bd7e3fecde,
-        type: 2}
-      propertyPath: m_rotScale
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
