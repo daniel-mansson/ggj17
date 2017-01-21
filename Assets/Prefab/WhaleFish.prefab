@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 114555810015516836}
   - component: {fileID: 50195286340419070}
   - component: {fileID: 60782254105586322}
-  - component: {fileID: 233139868332197864}
   m_Layer: 8
   m_Name: WhaleFish
   m_TagString: Untagged
@@ -499,6 +498,8 @@ MonoBehaviour:
   m_playerId: 0
   m_rotScale: 5
   m_rotTorque: 1
+  m_deadFloatForce: 10
+  m_mouth: {fileID: 114940976163072012}
 --- !u!114 &114940976163072012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -510,7 +511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0b8347fa94d4bb383f00d200eb899a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_joint: {fileID: 233139868332197864}
   m_ass: {fileID: 4028392426761516}
 --- !u!212 &212352233894801166
 SpriteRenderer:
@@ -687,26 +687,3 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!233 &233139868332197864
-HingeJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922148557691820}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 1, y: 0}
-  m_ConnectedAnchor: {x: 1, y: 0}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359

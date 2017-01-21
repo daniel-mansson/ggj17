@@ -208,6 +208,16 @@ Prefab:
       propertyPath: m_ColliderMask.m_Bits
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 253470671313038090, guid: 2cd2dddab4aea48409c47b8d97350f94,
+        type: 2}
+      propertyPath: m_FlowMagnitude
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 253470671313038090, guid: 2cd2dddab4aea48409c47b8d97350f94,
+        type: 2}
+      propertyPath: m_FlowVariation
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cd2dddab4aea48409c47b8d97350f94, type: 2}
   m_IsPrefabParent: 0
@@ -863,21 +873,6 @@ Prefab:
     - target: {fileID: 4927354556057890, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
       propertyPath: m_RootOrder
       value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 233139868332197864, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
-    - target: {fileID: 4944829136575332, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4561035968648050, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114555810015516836, guid: 2898f919d9377fa4790778bd7e3fecde,
-        type: 2}
-      propertyPath: m_playerId
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
