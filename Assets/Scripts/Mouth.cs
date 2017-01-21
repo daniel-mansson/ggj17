@@ -13,22 +13,23 @@ public class Mouth : MonoBehaviour {
 	bool m_haveThingInMouth = false;
 
 	public void Eat() {
-		Vector2 anchorPos = m_foodInMouth.Eat(m_ass);
-		if(m_foodInMouth.CurrentEatThing)
-			m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
-		if(anchorPos == Vector2.zero) {
-			Destroy(m_foodInMouth.gameObject);
-			m_foodInMouth = null;
-			m_haveThingInMouth = false;
-			EatCounter.FoodEatenCompletely();
+		if(m_haveThingInMouth) {
+			bool done = m_foodInMouth.Eat(m_ass);
+			if(m_foodInMouth.CurrentEatThing)
+				m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
+			if(done) {
+				EatCounter.FoodEatenCompletely();
+				Drop();
+			}
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		Debug.Log(other.name + " " + m_haveThingInMouth + " " + m_foodInMouth);
 		if(!m_haveThingInMouth) {
 			FoodHead foodHead = other.GetComponent<FoodHead>();
 			if(foodHead) {
-				var body = foodHead.Parent.Grabbed(foodHead.Backwards);
+				var body = foodHead.Parent.Grabbed(foodHead.Backwards, this);
 				if(body) {
 					m_foodInMouth = foodHead.Parent;
 					Destroy(foodHead.Parent.GetComponent<Rigidbody2D>());
@@ -56,6 +57,12 @@ public class Mouth : MonoBehaviour {
 		m_shitInMouth = null;
 		m_haveThingInMouth = false;
 		fish.SetDead();
+	}
+
+	public void Drop() {
+		Destroy(m_foodInMouth.gameObject);
+		m_foodInMouth = null;
+		m_haveThingInMouth = false;
 	}
 
 }
