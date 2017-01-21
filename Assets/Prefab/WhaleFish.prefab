@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4435473486049468}
   - component: {fileID: 212364768119783588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4086919613844784}
   - component: {fileID: 212850502252719912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4561035968648050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4669035318708522}
   - component: {fileID: 212810374388942342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4428854931064268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back2Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4880163832867630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back1Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4021954097180700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JawRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4882019172634712}
   - component: {fileID: 212697989256585014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4954463708380256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4396705442396338}
   - component: {fileID: 212352233894801166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4944829136575332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 50195286340419070}
   - component: {fileID: 58353780760572698}
   - component: {fileID: 60782254105586322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WhaleFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
