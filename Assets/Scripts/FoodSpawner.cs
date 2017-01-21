@@ -12,8 +12,7 @@ public class FoodSpawner : MonoBehaviour {
 	}
 	
 	[SerializeField] FoodSpawn[] m_foods;
-	[SerializeField] float m_height = 10, m_baseSpawnRate = 5, m_spawnRateMultiplerForEachEat = 0.95f, m_throwDownStrength = 1000, m_throwVariance = 100, m_maxTorque = 100;
-	[SerializeField] Vector2 m_box = 10 * (Vector2.one - Vector2.one / 2);
+	[SerializeField] float m_width = 10, m_baseSpawnRate = 5, m_spawnRateMultiplerForEachEat = 0.95f, m_throwDownStrength = 1000, m_throwVariance = 100, m_maxTorque = 100;
 
 	void Start() {
 		foreach(var spawn in m_foods) {
@@ -30,7 +29,7 @@ public class FoodSpawner : MonoBehaviour {
 					float spawnChance = spawn.BaseChance * Mathf.Pow(spawn.ChanceMultiplierForEachEat, EatCounter.NFoodsDestroyed());
 					if(Random.value > spawnChance) {
 						MultiChunk food = Instantiate(spawn.Template);
-						food.transform.position = transform.position + Vector3.right * Random.Range(-0.5f, 0.5f) * m_box.x;
+						food.transform.position = transform.position + Vector3.right * Random.Range(-0.5f, 0.5f) * m_width;
 						food.transform.Rotate(0, 0, 360f * Random.value);
 						food.gameObject.SetActive(true);
 						var body = food.GetComponent<Rigidbody2D>();
@@ -44,7 +43,7 @@ public class FoodSpawner : MonoBehaviour {
 
 	void OnDrawGizmos() {
 		Gizmos.color = Color.cyan;
-		Gizmos.DrawLine(transform.position - Vector3.right * m_box.x / 2, transform.position + Vector3.right * m_box.x / 2);
+		Gizmos.DrawLine(transform.position - Vector3.right * m_width / 2, transform.position + Vector3.right * m_width / 2);
 	}
 
 }
