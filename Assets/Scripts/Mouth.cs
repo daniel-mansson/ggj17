@@ -25,7 +25,6 @@ public class Mouth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log(other.name + " " + m_haveThingInMouth + " " + m_foodInMouth);
 		if(!m_haveThingInMouth) {
 			FoodHead foodHead = other.GetComponent<FoodHead>();
 			if(foodHead) {
@@ -60,9 +59,11 @@ public class Mouth : MonoBehaviour {
 	}
 
 	public void Drop() {
-		Destroy(m_foodInMouth.gameObject);
-		m_foodInMouth = null;
-		m_haveThingInMouth = false;
+		if(m_foodInMouth) {
+			Destroy(m_foodInMouth.gameObject);
+			m_foodInMouth = null;
+			m_haveThingInMouth = false;
+		}
 	}
 
 }

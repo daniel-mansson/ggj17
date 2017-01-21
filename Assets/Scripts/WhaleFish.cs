@@ -63,6 +63,9 @@ public class WhaleFish : MonoBehaviour
 			}
 		}
 	}
-	
+
+	public void Drop() {
+		m_mouth.Drop();
+	}
 
 }
