@@ -13,7 +13,7 @@ public class Mouth : MonoBehaviour {
 	bool m_haveThingInMouth = false;
 
 	public void Eat() {
-		if(m_haveThingInMouth) {
+		if(m_haveThingInMouth && m_foodInMouth) {
 			bool done = m_foodInMouth.Eat(m_ass);
 			if(m_foodInMouth.CurrentEatThing)
 				m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
@@ -25,7 +25,6 @@ public class Mouth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log(other.name + " " + m_haveThingInMouth + " " + m_foodInMouth);
 		if(!m_haveThingInMouth) {
 			FoodHead foodHead = other.GetComponent<FoodHead>();
 			if(foodHead) {
@@ -33,9 +32,10 @@ public class Mouth : MonoBehaviour {
 				if(body) {
 					m_foodInMouth = foodHead.Parent;
 					Destroy(foodHead.Parent.GetComponent<Rigidbody2D>());
-					foreach (var c in foodHead.Parent.GetComponentsInChildren<Collider2D>())
+					foreach (Transform c in foodHead.Parent.transform)
 					{
-						c.enabled = false;
+						if(c.GetComponent<FoodPart>())
+							c.gameObject.layer = LayerMask.NameToLayer("Default");
 					}
 					m_foodInMouth.transform.SetParent(transform);
 					m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
@@ -64,9 +64,11 @@ public class Mouth : MonoBehaviour {
 	}
 
 	public void Drop() {
-		Destroy(m_foodInMouth.gameObject);
-		m_foodInMouth = null;
-		m_haveThingInMouth = false;
+		if(m_foodInMouth) {
+			Destroy(m_foodInMouth.gameObject);
+			m_foodInMouth = null;
+			m_haveThingInMouth = false;
+		}
 	}
 
 }

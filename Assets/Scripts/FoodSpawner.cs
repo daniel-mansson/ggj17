@@ -9,10 +9,11 @@ public class FoodSpawner : MonoBehaviour {
 		public MultiChunk Template;
 		public float BaseChance;
 		public int CountOffset;
+		public float ThrowDownStrength;
 	}
 	
 	[SerializeField] FoodSpawn[] m_foods;
-	[SerializeField] float m_width = 10, m_baseSpawnRate = 5, m_spawnRateMultiplerForEachEat = 0.95f, m_throwDownStrength = 1000, m_throwVariance = 100, m_maxTorque = 100;
+	[SerializeField] float m_width = 10, m_baseSpawnRate = 5, m_spawnRateMultiplerForEachEat = 0.95f, m_throwVariance = 100, m_maxTorque = 100;
 
 	void Start() {
 		foreach(var spawn in m_foods) {
@@ -32,7 +33,7 @@ public class FoodSpawner : MonoBehaviour {
 						food.transform.Rotate(0, 0, 360f * Random.value);
 						food.gameObject.SetActive(true);
 						var body = food.GetComponent<Rigidbody2D>();
-						body.AddForce(Vector2.down * (m_throwDownStrength + Random.Range(-1f, 1f) * m_throwVariance), ForceMode2D.Impulse);
+						body.AddForce(Vector2.down * (spawn.ThrowDownStrength + Random.Range(-1f, 1f) * m_throwVariance), ForceMode2D.Impulse);
 						body.AddTorque(m_maxTorque * Random.Range(-1f, 1f), ForceMode2D.Impulse);
 					}
 				}
