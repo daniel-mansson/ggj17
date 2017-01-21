@@ -13,7 +13,7 @@ public class WhaleFish : MonoBehaviour
 	public Mouth m_mouth;
 	public GameObject m_deathParticles;
 
-	Rigidbody2D m_body;
+	public Rigidbody2D m_body;
 	public Controller m_controller;
 	float m_targetRot = 0f;
 	bool m_dead = false;
@@ -25,13 +25,13 @@ public class WhaleFish : MonoBehaviour
 	{
 		m_deathParticles.SetActive(false);
 		ReplaceSprites();
+		m_body = GetComponent<Rigidbody2D>();
 	}
 
 	void Start ()
 	{
 		ReplaceSprites();
 		m_controller = Systems.Instance.Input.GetController(m_playerId);
-		m_body = GetComponent<Rigidbody2D>();
 	}
 
 	void ReplaceSprites()

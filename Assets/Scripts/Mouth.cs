@@ -6,7 +6,8 @@ using UnityEngine;
 public class Mouth : MonoBehaviour {
 
 	[SerializeField] Transform m_ass;
-	[SerializeField] float m_deathTime = 3;
+	[SerializeField] float m_deathTime = 3, m_hitstopTimePerEat = 0.01f;
+	[SerializeField] int m_hitstopThresholdEats = 5;
 
 	MultiChunk m_foodInMouth;
 	Shit m_shitInMouth;
@@ -14,6 +15,9 @@ public class Mouth : MonoBehaviour {
 
 	public void Eat() {
 		if(m_haveThingInMouth && m_foodInMouth) {
+			var anim = transform.root.GetComponent<CodeAnimation>();
+			anim.Chew();
+			anim.Poop();
 			bool done = m_foodInMouth.Eat(m_ass);
 			if(m_foodInMouth.CurrentEatThing)
 				m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
@@ -55,6 +59,16 @@ public class Mouth : MonoBehaviour {
 	}
 
 	IEnumerator TimeToDie() {
+		if(EatCounter.NFoodsDestroyed() > m_hitstopThresholdEats) {
+			Debug.Log("Hitstop!");
+			float originalTimeScale = Time.timeScale;
+			Time.timeScale = 0;
+			float clock = Time.realtimeSinceStartup;
+			yield return new WaitForSecondsRealtime(m_hitstopTimePerEat * EatCounter.NFoodsDestroyed());
+			Time.timeScale = originalTimeScale;
+		} else {
+			Debug.Log("Not hitstop yet! " + m_hitstopThresholdEats);
+		}
 		yield return new WaitForSeconds(m_deathTime);
 		var fish = transform.root.GetComponent<WhaleFish>();
 		Destroy(m_shitInMouth.gameObject);

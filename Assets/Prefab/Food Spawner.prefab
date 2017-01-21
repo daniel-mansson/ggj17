@@ -257,8 +257,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1450181074799590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.739, y: 0, z: 0}
-  m_LocalScale: {x: 1.389956, y: 1.3899565, z: 1.3899565}
+  m_LocalPosition: {x: -1.19, y: 0.68, z: 0}
+  m_LocalScale: {x: 2.2596335, y: 2.2596343, z: 2.2596343}
   m_Children: []
   m_Father: {fileID: 4188822135398270}
   m_RootOrder: 1
@@ -400,7 +400,7 @@ Transform:
   m_GameObject: {fileID: 1503197862519342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.69, z: 0}
-  m_LocalScale: {x: 1.5343447, y: 1.534345, z: 1.534345}
+  m_LocalScale: {x: 2.2951615, y: 2.2951617, z: 2.2951617}
   m_Children: []
   m_Father: {fileID: 4188822135398270}
   m_RootOrder: 0
@@ -442,10 +442,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -462,7 +462,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1.3
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -482,7 +482,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 9
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -502,10 +502,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1.8
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -522,10 +522,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 6
+  m_Mass: 9
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -752,7 +752,7 @@ MonoBehaviour:
   - {fileID: 1450181074799590}
   m_poopTemplate: {fileID: 50403210737004234}
   m_massVariance: 0
-  m_poopForce: 75
+  m_poopForce: 500
 --- !u!114 &114305976267903836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -847,20 +847,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_foods:
   - Template: {fileID: 114797903071813334}
-    BaseChance: 0.4
-    CountOffset: 3
-    ThrowDownStrength: 120
+    BaseChance: 0.3
+    CountOffset: 2
+    ThrowDownStrength: 140
   - Template: {fileID: 114037994747305986}
     BaseChance: 0.6
     CountOffset: 0
     ThrowDownStrength: 50
   - Template: {fileID: 114206965765445758}
-    BaseChance: 0.5
-    CountOffset: 5
-    ThrowDownStrength: 60
+    BaseChance: 0.1
+    CountOffset: 4
+    ThrowDownStrength: 600
   m_width: 60
   m_baseSpawnRate: 2
-  m_spawnRateMultiplerForEachEat: 0.8
+  m_spawnRateMultiplerForEachEat: 0.95
   m_throwVariance: 25
   m_maxTorque: 5
 --- !u!114 &114767561263401330
@@ -905,7 +905,7 @@ MonoBehaviour:
   - {fileID: 1859481333112778}
   m_poopTemplate: {fileID: 50987419886523086}
   m_massVariance: 0
-  m_poopForce: 50
+  m_poopForce: 40
 --- !u!114 &114870129832076324
 MonoBehaviour:
   m_ObjectHideFlags: 1
