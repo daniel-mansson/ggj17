@@ -6,10 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scripts/System/Example/boot.unity
+    path: Assets/Scenes/TheMenu.unity
   - enabled: 1
-    path: Assets/Scripts/System/Example/game.unity
-  - enabled: 1
-    path: Assets/Scripts/System/Example/start.unity
-  - enabled: 1
-    path: Assets/Scripts/System/Example/win.unity
+    path: Assets/Scenes/TheRealGame.unity

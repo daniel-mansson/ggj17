@@ -13,7 +13,7 @@ public class WhaleFish : MonoBehaviour
 	public GameObject m_deathParticles;
 
 	Rigidbody2D m_body;
-	Controller m_controller;
+	public Controller m_controller;
 	float m_targetRot = 0f;
 	bool m_dead = false;
 
@@ -43,4 +43,5 @@ public class WhaleFish : MonoBehaviour
 		m_targetRot = 180;
 	}
 	
+
 }
