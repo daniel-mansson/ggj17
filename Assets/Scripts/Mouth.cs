@@ -32,9 +32,10 @@ public class Mouth : MonoBehaviour {
 				if(body) {
 					m_foodInMouth = foodHead.Parent;
 					Destroy(foodHead.Parent.GetComponent<Rigidbody2D>());
-					foreach (var c in foodHead.Parent.GetComponentsInChildren<Collider2D>())
+					foreach (Transform c in foodHead.Parent.transform)
 					{
-						c.enabled = false;
+						if(c.GetComponent<FoodPart>())
+							c.gameObject.layer = LayerMask.NameToLayer("Default");
 					}
 					m_foodInMouth.transform.SetParent(transform);
 					m_foodInMouth.transform.position += transform.position - m_foodInMouth.CurrentEatThing.position;
