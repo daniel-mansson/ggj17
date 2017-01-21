@@ -6,19 +6,16 @@ using UnityEngine;
 public class MultiChunk : MonoBehaviour {
 
 	[SerializeField] GameObject[] m_foodParts;
+	[SerializeField] float m_massVariance = 0.1f;
 
 	int m_eaten = 0;
 	bool m_eatingBackwards = false;
 	bool m_isGrabbed = false;
 	Rigidbody2D m_body;
-	float m_targetHeight;
 
-	void Start() {
+	void Awake() {
 		m_body = GetComponent<Rigidbody2D>();
-	}
-
-	public void Initialize(float height) {
-		m_targetHeight = height;
+		m_body.mass += Random.value * m_massVariance;
 	}
 
 	// returns true when done eating
@@ -40,17 +37,6 @@ public class MultiChunk : MonoBehaviour {
 			return m_body;
 		}
 		return null;
-	}
-
-	void Update() {
-
-	}
-
-	void OnDrawGizmos() {
-		Gizmos.color = Color.red;
-		var targetpos = transform.position;
-		targetpos.y = m_targetHeight;
-		Gizmos.DrawSphere(targetpos, 0.1f);
 	}
 
 }
