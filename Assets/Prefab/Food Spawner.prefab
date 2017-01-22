@@ -503,7 +503,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.8
+  m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
@@ -690,7 +690,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 46c4309b0a5f64c2fb1e97946f539691, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.76
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -935,7 +935,7 @@ MonoBehaviour:
   - Template: {fileID: 114037994747305986}
     BaseChance: 0.6
     CountOffset: 0
-    ThrowDownStrength: 50
+    ThrowDownStrength: 40
   - Template: {fileID: 114206965765445758}
     BaseChance: 0.1
     CountOffset: 4
@@ -945,6 +945,7 @@ MonoBehaviour:
   m_spawnRateMultiplerForEachEat: 1.01
   m_throwVariance: 25
   m_maxTorque: 5
+  m_maxFoods: 10
 --- !u!114 &114767561263401330
 MonoBehaviour:
   m_ObjectHideFlags: 1
