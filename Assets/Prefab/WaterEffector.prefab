@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc183dae00cb1453bb573cb087f4e1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_fasterPerEat: 1.2
+  m_fasterPerEat: 1.1
 --- !u!253 &253470671313038090
 BuoyancyEffector2D:
   m_ObjectHideFlags: 1
