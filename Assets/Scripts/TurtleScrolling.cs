@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HavetsfrukterScrolling : MonoBehaviour {
-    private float speed = 0.02f;
-    private float maxLeft;
+public class TurtleScrolling : MonoBehaviour {
 
+    public float speed;
+    private float maxLeft;
 	// Use this for initialization
 	void Start () {
-        speed = 0.1f;
-        maxLeft = -70.0f;
+        maxLeft = -240.0f;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +19,7 @@ public class HavetsfrukterScrolling : MonoBehaviour {
 
         if (transform.position.x < maxLeft)
         {
-            transform.Translate(160.0f, 0, 0);
+            transform.Translate(480.0f, 0, 0);
         }
 	}
 }
