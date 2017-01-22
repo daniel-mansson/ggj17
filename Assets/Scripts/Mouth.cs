@@ -13,6 +13,7 @@ public class Mouth : MonoBehaviour {
 	MultiChunk m_foodInMouth;
 	Shit m_shitInMouth;
 	bool m_haveThingInMouth = false;
+	public event System.Action<Mouth> OnTimeToDie;
 
 	public void Eat() {
 		if(m_haveThingInMouth && m_foodInMouth) {
@@ -61,13 +62,17 @@ public class Mouth : MonoBehaviour {
 	}
 
 	IEnumerator TimeToDie() {
+
+		if (OnTimeToDie != null)
+			OnTimeToDie(this);
+
 		if(EatCounter.NFoodsDestroyed() > m_hitstopThresholdEats) {
 			Debug.Log("Hitstop!");
 			float originalTimeScale = Time.timeScale;
-			Time.timeScale = 0;
+			//Time.timeScale = 0;
 			float clock = Time.realtimeSinceStartup;
 			yield return new WaitForSecondsRealtime(m_hitstopTimePerEat * EatCounter.NFoodsDestroyed());
-			Time.timeScale = originalTimeScale;
+		//	Time.timeScale = originalTimeScale;
 		}
 		yield return new WaitForSeconds(m_deathTime);
 		var fish = transform.root.GetComponent<WhaleFish>();
