@@ -15,7 +15,10 @@ public class FoodSpawner : MonoBehaviour {
 	[SerializeField] FoodSpawn[] m_foods;
 	[SerializeField] float m_width = 10, m_baseSpawnRate = 5, m_spawnRateMultiplerForEachEat = 0.95f, m_throwVariance = 100, m_maxTorque = 100;
 
+	AudioSource m_spawnSound;
+
 	void Start() {
+		m_spawnSound = GetComponent<AudioSource>();
 		foreach(var spawn in m_foods) {
 			spawn.Template.gameObject.SetActive(false);
 		}
@@ -28,6 +31,7 @@ public class FoodSpawner : MonoBehaviour {
 			foreach(var spawn in m_foods) {
 				if(spawn.CountOffset <= EatCounter.NFoodsDestroyed()) {
 					if(Random.value > spawn.BaseChance) {
+						m_spawnSound.Play();
 						MultiChunk food = Instantiate(spawn.Template);
 						food.transform.position = transform.position + Vector3.right * Random.Range(-0.5f, 0.5f) * m_width;
 						food.transform.Rotate(0, 0, 360f * Random.value);
