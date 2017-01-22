@@ -683,6 +683,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114670685375258700, guid: 2898f919d9377fa4790778bd7e3fecde,
+        type: 2}
+      propertyPath: m_isInMenu
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2898f919d9377fa4790778bd7e3fecde, type: 2}
   m_IsPrefabParent: 0
@@ -779,9 +784,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822636e2f21ee964586ceaf62e39c7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 0.3
+  m_speed: 0.4
   m_speedupPerEat: 1.05
-  m_material: {fileID: 2100000, guid: 010c31bf3b030d34cb765f0575e76283, type: 2}
+  m_material: {fileID: 2100000, guid: 4e179998af01f8246b83392ada700cb5, type: 2}
 --- !u!23 &1120440774
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -795,7 +800,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 010c31bf3b030d34cb765f0575e76283, type: 2}
+  - {fileID: 2100000, guid: 4e179998af01f8246b83392ada700cb5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
