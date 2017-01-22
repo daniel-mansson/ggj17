@@ -5,12 +5,14 @@ using UnityEngine;
 public class HavetsfruktMover : MonoBehaviour {
 
     public float speed;
+    public int direction;
     public float maxAngle;
 
 	// Use this for initialization
 	void Start () {
-        speed = Random.Range(0.10f, 0.30f);
+        speed = Random.Range(0.05f, 0.1f);
         maxAngle = 8.0f;
+        direction = (Random.Range(0, 1) * 2) - 1;
 	}
 	
 	// Update is called once per frame
@@ -19,13 +21,13 @@ public class HavetsfruktMover : MonoBehaviour {
 
         if (transform.eulerAngles.z > maxAngle)
         {
-            speed *= -1;
+            direction *= -1;
         }
         else if (transform.eulerAngles.z < -maxAngle)
         {
-            speed *= -1;
+            direction *= -1;
         }
 
-        transform.Rotate(rotation * speed);
+        transform.Rotate(rotation * speed * direction);
 	}
 }
