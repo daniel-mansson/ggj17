@@ -10,6 +10,7 @@ public class FoodPart : MonoBehaviour {
 			WhaleFish fish = transform.root.GetComponent<WhaleFish>();
 			if(fish) {
 				fish.Drop();
+				Destroy(shit.gameObject);
 			}
 		}
 	}
