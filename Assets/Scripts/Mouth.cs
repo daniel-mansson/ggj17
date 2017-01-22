@@ -66,8 +66,6 @@ public class Mouth : MonoBehaviour {
 			float clock = Time.realtimeSinceStartup;
 			yield return new WaitForSecondsRealtime(m_hitstopTimePerEat * EatCounter.NFoodsDestroyed());
 			Time.timeScale = originalTimeScale;
-		} else {
-			Debug.Log("Not hitstop yet! " + m_hitstopThresholdEats);
 		}
 		yield return new WaitForSeconds(m_deathTime);
 		var fish = transform.root.GetComponent<WhaleFish>();
