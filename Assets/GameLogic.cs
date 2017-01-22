@@ -11,6 +11,7 @@ public class GameLogic : MonoBehaviour
 
 	bool m_isGameOver = false;
 	List<WhaleFish> m_fish = new List<WhaleFish>();
+	List<int> m_ai = new List<int>();
 	PlayerInfo m_players;
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,18 @@ public class GameLogic : MonoBehaviour
 			m_players.m_activePlayers.Add(3);
 		}
 
+		if (m_players.Count == 1)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				if (!m_players.IsJoined(i))
+				{
+					m_ai.Add(i);
+					m_players.m_activePlayers.Add(i);
+				}
+			}
+		}
+
 		foreach (var id in m_players.m_activePlayers)
 		{
 			var fish = (WhaleFish)Instantiate(m_fishPrefab, m_spawnPos[id].position, Quaternion.identity);
@@ -34,6 +47,9 @@ public class GameLogic : MonoBehaviour
 			fish.OnDeath += OnFishDied;
 			fish.m_mouth.OnTimeToDie += OnFishAtePoop;
 			m_fish.Add(fish);
+
+			if (m_ai.Contains(id))
+				fish.m_isAI = true;
 		}
 
 		m_cameraStartPos = m_camera.transform.position;
@@ -132,6 +148,10 @@ public class GameLogic : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 
+		foreach (var p in m_ai)
+		{
+			m_players.m_activePlayers.Remove(p);
+		}
 		Systems.Instance.State.MoveToState(StateHandler.State.Menu);
 	}
 }
