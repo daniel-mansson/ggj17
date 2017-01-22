@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HavetsfrukterScrolling : MonoBehaviour {
-    private float speed = 0.02f;
+    private float speed = 0.04f;
     private float maxLeft;
 
 	// Use this for initialization
 	void Start () {
-        speed = 0.1f;
         maxLeft = -70.0f;
 	}
 	
